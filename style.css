@@ -127,7 +127,6 @@ h1 {
   animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-name: change;
-  animation-play-state: paused;
   backdrop-filter: blur(0.4px);
 }
 
