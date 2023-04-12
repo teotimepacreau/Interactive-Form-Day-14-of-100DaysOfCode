@@ -1,5 +1,5 @@
 # Interactive form with error alerts
-![Sliding Menu and Grid App View](https://github.com/teotimepacreau/Sliding-menu-and-grip-app-view-Day13-Of-100DaysOfCode/blob/main/Sliding%20menu%20and%20grid%20app%20view.gif)
+![Interactive Form demo](https://github.com/teotimepacreau/Interactive-Form-Day-14-of-100DaysOfCode/blob/main/interactiveform.gif
 
 # Project goals
 - learning input, forms and radio buttons UI best practices
