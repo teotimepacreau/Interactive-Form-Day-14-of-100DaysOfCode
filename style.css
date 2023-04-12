@@ -1,0 +1,440 @@
+/* CSS RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default list styles */
+ul, ol, li {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+}    
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+    
+/* A element that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+    
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%; /* img should never overflow past the available space*/
+  display: block; /* avoid blank bottom*/
+  height: auto;/*preserve aspect ratio*/
+}
+
+/* More consistent, styleable hr*/
+hr {
+  border-width: 1px 0 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* More space above the underline */
+a {
+  text-underline-offset: 0.2ex;
+}
+
+
+/*body *{
+    outline : 2px solid red ;
+}*/
+@font-face {
+  font-family: "Martian-Mono";
+  src: url("MartianMonoVariable.woff2");
+  font-weight: 100 800;
+  font-stretch: 75% 112.501%;
+  unicode-range: U+0020-007E, U+00A0-0107, U+010A-0113, U+0116-011B,
+      U+011E-0123, U+0126-012B, U+012E-0133, U+0136-0148, U+014A-014D,
+      U+0150-015B, U+015E-017E, U+018F, U+0192, U+019D, U+01CD-01CE,
+      U+01E6-01E7, U+01FA-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259,
+      U+0272, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308,
+      U+030A-030C, U+0312, U+0323, U+0326-0328, U+0401, U+0404, U+0406-0407,
+      U+040E, U+0410-044F, U+0451, U+0454, U+0456-0457, U+045E, U+0490-0491,
+      U+04AA-04AB, U+04D0-04D1, U+04D6-04D7, U+04F2-04F3, U+1E0C-1E0D,
+      U+1E24-1E25, U+1E62-1E63, U+1E6C-1E6D, U+1E80-1E85, U+1E92-1E93,
+      U+1E9E, U+1EBC-1EBD, U+1ECA-1ECD, U+1EE4-1EE5, U+1EF2-1EF3,
+      U+1EF8-1EF9, U+2002-2003, U+2011, U+2013-2014, U+2018-201A,
+      U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070,
+      U+2074-2079, U+2080-2089, U+20AC, U+20B4, U+20BD, U+2116, U+2122,
+      U+2190-2193, U+2212, U+2248, U+2260, U+A78B-A78C;
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  src:
+    url('Mona-Sans.woff2') format('woff2 supports variations'),
+    url('Mona-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+  --tailleparagraphe: 1rem;
+  --taillesubtitle: 1.618rem;
+  --tailleh3: 2.618rem;
+  --tailleh2: 4.236rem;
+  --tailleh1: 6.854rem;
+  --rythme: 1.5rem;
+  --bg-body: oklch(95% 0.006 200);/*C 0-0.37  L0-100 H0-360*/
+  --txt: lch(25% 35 200);
+  --accent: oklch(85% 0.20 145);
+  --accentalt: oklch(30% 0.20 145);
+  --h1container: hsla(51, 24%, 22%, 0.16);
+  --confirmation: oklch(85% 0.20 145 / 30%);
+  --error: oklch(70% 0.16 30 / 40%);
+  --errori: oklch(40% 0.37 30);
+}
+
+/* TYPE SETTINGS */
+label {
+  font-size: var(--tailleparagraphe);
+  letter-spacing: -0.05ex;
+}
+
+h1 {
+  font-family: "Mona Sans";
+  -webkit-text-stroke: 2px var(--accent);
+  color: transparent;
+  font-size: var(--tailleh2);
+  font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
+  font-style: italic;
+  line-height: 1.3;
+  letter-spacing: 0.3rem;
+  z-index: 3;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-name: change;
+  animation-play-state: paused;
+  backdrop-filter: blur(0.4px);
+}
+
+
+  
+
+/* VAR FONT ANIM */
+
+@keyframes change {
+  0% {
+    font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
+    color: var(--accent);
+  }
+
+  50% {
+    font-variation-settings: "wght" 900, "wdth" 125, "ital" 12;
+    color: transparent;
+  }
+
+  100% {
+    font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
+    color: var(--accent);
+  }
+}
+
+body {
+  font-family: 'Martian-Mono', monospace;
+  background-color: var(--bg-body);
+}
+
+* {
+  accent-color: var(--accent);
+}
+
+.form-container {
+  display: flex;
+  color: var(--txt);
+}
+
+h1 {
+  position: absolute;
+  bottom: 0;
+  padding: var(--rythme);
+  z-index: 2;
+}
+
+h2 {
+  margin-bottom: calc(0.75*var(--rythme));
+}
+.form-container > * {
+  flex: 1 1 50%;
+}
+
+img {
+  object-fit: cover;
+  object-position: 70px;
+  object-view-box: inset(10%);
+  transition: object-view-box 1s ease-out;
+}
+
+img:hover{
+  object-view-box: inset(13%);
+}
+
+.right {
+  padding: var(--rythme);
+}
+
+form {
+  padding: var(--rythme);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--rythme);
+  accent-color: var(--accent);
+  outline-color: var(--accent);
+}
+
+input {
+  font-weight: bold;
+  padding: 0.5ex 1ex;
+  border-radius: 0.3rem;
+  border: 0.1px solid rgba(31, 28, 28, 0.183);
+}
+
+input:focus, textarea:focus, select:focus{
+  outline-width: 0.3ex;
+  outline-style: ridge;/*follow the border without white px*/
+  outline-color: var(--accentalt);
+}
+
+button[type="submit"]{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1ex;
+  background-color: var(--accent);
+  color: var(--txt);
+  font-weight: bold;
+  min-width: calc(0.5*var(--rythme));
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1rem;
+  border: 0.4ex solid;
+  border-color: transparent;
+  padding: 1ex 2ex;/*hauteur des minuscules souvent appelée hauteur "x" lowercase*/
+  border-radius: var(--rythme);
+  transition: 0.3s ease-out;
+}
+
+button:hover {
+  background-color: var(--accentalt);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+button:focus {
+  outline-offset: 4px;
+  outline-width: 0.4ex;
+  outline-style: solid;
+  outline-color: var(--accentalt);
+}
+
+i:hover{
+  color: var(--accent);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.25*var(--rythme));
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--rythme);
+}
+
+.line > * {
+  flex: 1;
+}
+
+.line + .line {
+  margin-top: calc(0.5*var(--rythme));
+}
+
+.flexer {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.5*var(--rythme));
+}
+
+
+/*PASSWORD REVEAL*/
+
+.container-pass-reveal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(0.25*var(--rythmeS));
+  accent-color: var(--accent);
+  background-color: #efefef;
+}
+
+#password {
+  display: inline-block;
+    /* Take available width */
+    flex: 1;
+}
+
+#passwordicon {
+  right: 2ex;
+  position: absolute;
+}
+
+/*SELECT PLAN*/
+.radio-group {
+  margin-top: var(--rythme);
+  display: grid;
+  grid-template-columns: max-content 1fr 1fr;
+  gap: calc(0.25*var(--rythme));
+  align-items: baseline;
+  justify-items: end;
+}
+
+/* Hide the native radio input */
+input[type="radio"] {
+  appearance: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.radio-group label {
+  position: relative;
+  padding: calc(0.5*var(--rythme)) calc(1.5*var(--rythme));
+  border-radius: 1ex;
+  box-shadow: -1px 1px 6px 0px rgba(0, 0, 0, 0.201);
+}
+
+.radio-group label::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  right: 8px;
+  top: 8px;
+  background-color: var(--h1container);
+}
+
+/* When the radio is checked, style the label accordingly */
+input[type="radio"]:checked + label {
+  background: var(--accent);
+  outline: solid 3px var(--accent);
+}
+
+/* When the radio is focused, style the label accordingly */
+input[type="radio"]:focus + label {
+  outline: solid 3px var(--accent);
+  outline-offset: 5px;
+}
+
+/* When the radio is checked, style the pseudo element accordingly */
+input[type="radio"]:checked + label::after {
+  background: var(--accentalt);
+}
+
+
+/*CHAMPS CHIFFRES*/
+#city-CP, #street-number {
+  width: 9ch;
+}
+
+/*CLASS POUR LA FELICITATION SUITE AU CHOIX DU PLAN VIA RADIO BUTTON*/
+#plan-child {
+  margin-top: calc(0.5*var(--rythme));
+  display: flex;
+  grid-column: 1 / 4;
+  gap: 1ch;
+  background-color: var(--confirmation);
+  padding: 1ex 2ex;
+  border-radius: 1ex;
+
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+/*CLASS INVISIBLE POUR FAIRE DISPARAITRE LES MESSAGES D'ERREUR*/
+.invisible {
+    position: absolute;
+    transform: scale(0);
+}
+
+/*CLASS FOR ERROR MSG AND INPUT STYLE ON ERROR*/
+
+.input-error {
+  border: 0.3ex solid var(--errori);
+}
+
+.input-success {
+  border: 0.3ex solid var(--accent);
+}
+
+.error {
+  display: none;
+  gap: 1ex;
+  align-items: center;
+  background-color: var(--error);
+  padding: 1ex 2ex;
+  border-radius: 1ex;
+  color: var(--errori);
+  opacity: 0;
+}
+
+.error i {
+  color: var(--errori);
+}
+
+
+/*SUCCESS FORM SUBMIT*/
+.success {
+  display: none;
+  gap: 1ch;
+  background-color: var(--confirmation);
+  padding: 1ex 2ex;
+  border-radius: 1ex;
+}
+
+/*BUTTON DISABLED*/
+button:disabled{
+  background-color: var(--error);
+  color: var(--errori);
+  border-color: var(--errori);
+  cursor: not-allowed;
+}
+
+::selection {
+  color: black;
+  background-color: var(--accent);
+}
+
+
+/*GARDER TOUT EN BAS POUR L'HERITAGE*/
+.show {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}

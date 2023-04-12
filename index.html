@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/2dc9aa8795.js" crossorigin="anonymous"></script>
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Formulaire</title>
+</head>
+<body>
+        <div class="form-container">
+            <div class="left">
+                <img src="astronaut.jpg" alt="astronaut walking in desert"><h1>Join the <br>program !</h1></img>
+            </div>
+            <form id="myForm">
+                        <div role="radiogroup"
+                        class="radio-group"
+                        aria-labelledby="group_heading">
+                            <legend><h2>Select your plan :</h2></legend>
+                            <div class="spaceX">
+                                <input autocomplete="on" type="radio" id="SpaceX" name="plan" value="SpaceX" checked>
+                                <label for="SpaceX">SpaceX</label>
+                            </div>
+                            <div class="Nasa">
+                                <input autocomplete="on" type="radio" id="Nasa" name="plan" value="Nasa">
+                                <label for="Nasa">Nasa</label>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h2>Address</h2>
+                                <div class="line">
+                                    <div class="street-number flexer">
+                                        <label for="street-number" class="street-name">Street n°</label>
+                                        <input autocomplete="on" type="number" id="street-number" min="1">
+                                    </div>
+                                    <div class="street-name flexer">
+                                        <label for="street-name" class="street-name">Streetname</label>
+                                        <input autocomplete="on" type="text" id="street-name">
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="zip flexer">
+                                        <label for="city-CP" class="city-CP">ZIP Code</label>
+                                        <input autocomplete="on" type="number" id="city-CP" min="1" maxlength="5" size="5">
+                                    </div>
+                                    <div class="city flexer">
+                                        <label for="city-name" class="city-name">City</label>
+                                        <input autocomplete="on" type="text" id="city-name">
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="block">
+                            <h2>Account</h2>
+                            <div class="account line">
+                                <div class="prenom flexer">
+                                    <label for="prenom" class="prenom">Firstname</label>
+                                    <input autocomplete="on" type="text" id="prenom">
+                                    <div class="error">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                        <span id="errorMessageText"></span>
+                                    </div>
+                                </div>
+                                <div class="nom flexer">
+                                    <label for="nom" class="prenom">Lastname</label>
+                                    <input autocomplete="on" type="text" id="nom">
+                                    <div class="error">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                        <span id="errorMessageText"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account line">
+                                    <div class="email flexer">
+                                        <label for="email" class="email">E-mail</label>
+                                        <input autocomplete="on" type="email" id="email">
+                                        <div class="error">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                            <span id="errorMessageText"></span>
+                                        </div>
+                                    </div>
+                                    <div class="password flexer">
+                                        <label for="password" class="password">Password</label>
+                                        <div class="container-pass-reveal">
+                                            <input autocomplete="on" title="Must be at least 8 characters" type="password" value="FakePSW" id="password" required minlength="8">
+                                            <i id="passwordicon" onclick="myFunction()" class="fa-solid fa-eye"></i>
+                                        </div>
+                                        <div class="error">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                            <span id="errorMessageText"></span>
+                                        </div>                        
+                                    </div>
+                            </div>
+                            </div>
+                        <button type="submit">Get Started
+                            <i class="fa-solid fa-rocket"></i>
+                        </button>
+                        <div class="success">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <p>Your form has been successfully submitted</p>
+                        </div>
+                </form>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
