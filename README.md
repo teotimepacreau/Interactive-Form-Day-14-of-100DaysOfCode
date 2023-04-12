@@ -1,5 +1,5 @@
 # Interactive form with error alerts
-![Interactive Form demo](https://github.com/teotimepacreau/Interactive-Form-Day-14-of-100DaysOfCode/blob/main/interactiveform.gif
+![Interactive Form demo](https://github.com/teotimepacreau/Interactive-Form-Day-14-of-100DaysOfCode/blob/main/interactiveform.gif)
 
 # Project goals
 - learning input, forms and radio buttons UI best practices
